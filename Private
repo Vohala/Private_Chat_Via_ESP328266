@@ -5,8 +5,8 @@
 #include <ArduinoJson.h>
 #include <Hash.h>
 
-const char *ssid = "ChatAP";
-const char *password = "chatpassword";
+const char *ssid = "Vohala";
+const char *password = "Vohala_Horizon";
 
 ESP8266WebServer server(80);
 WebSocketsServer webSocket = WebSocketsServer(81);
