@@ -1,37 +1,51 @@
-# Private_Chat_Via_ESP328266 WebSocket Chat Server with User Authentication
+# Private_Chat_Via_ESP328266 WebSocket via Lora RA-02 Chat Server with User Authentication
 
 
-This project creates a simple chat application using an ESP8266 microcontroller, allowing multiple users to register, log in, and communicate over a WiFi network using WebSockets.
+Developed by Vohala, this project is a powerful LoRa-based chat application for the ESP8266 microcontroller. It allows real-time communication over a custom web interface, with user registration, login, and LoRa mesh networking to extend communication over long distances.
 Features
 
-    User Registration and Login with session management
-    Real-time chat using WebSockets
-    User data persistence via EEPROM
+    Wi-Fi access point creation for user connection.
+    User authentication and session management.
+    Real-time chat over WebSocket.
+    LoRa mesh communication for message relay between nodes.
+    EEPROM-based user data storage.
 
-Requirements
-Hardware
+Required Libraries
 
-    ESP8266 module
+Make sure to have these libraries installed in your Arduino IDE:
 
-Software
+    ESP8266WiFi (Built-in)
+    ESP8266WebServer (Built-in)
+    EEPROM (Built-in)
+    WebSocketsServer
+    ArduinoJson
+    RadioHead
+    Hash (Built-in)
+    SPI (Built-in)
 
-    Arduino IDE
-    Libraries (install in Arduino IDE):
-        ESP8266 Board Package
-            Go to Tools > Board > Boards Manager and search for ESP8266 by ESP8266 Community
-        ArduinoJson by Benoit Blanchon
-            Go to Sketch > Include Library > Manage Libraries, then search for ArduinoJson
-        WebSockets by Markus Sattler
-            Go to Sketch > Include Library > Manage Libraries and search for WebSockets
+Pin Configuration
 
-Setup
+Connect the ESP8266 to the LoRa RA-02 module as follows:
+LoRa RA-02 Pin	ESP8266 Pin
+MISO	D6 (GPIO12)
+MOSI	D7 (GPIO13)
+SCK	D5 (GPIO14)
+NSS (CS)	D2 (GPIO4)
+RST	Not Connected
+DIO0	D1 (GPIO5)
+3.3V	3.3V
+GND	GND
+Quick Start Guide
 
-    Clone/Download Code: Clone this repository or download it as a .zip and extract it.
-    WiFi Credentials: Update ssid and password in the code to your preferred WiFi network name and password.
-    Upload Code: Connect your ESP8266 to your computer, select the correct board and port, then upload the code using Arduino IDE.
+    Install the ESP8266 board package in your Arduino IDE.
+    Connect your ESP8266 to the LoRa RA-02 module as per the pin configuration above.
+    Upload the code to your ESP8266.
+    Connect to the Wi-Fi network Vohala using the password Vohala_Horizon.
+    Open a browser and go to http://192.168.4.1 to access the chat application.
 
-Accessing the Chat Application
+Notes
 
-    Connect to the ESP8266’s WiFi network.
-    Open a browser and go to http://192.168.4.1.
-    Register a new user, log in, and start chatting!
+    The LoRa frequency used is 433.0 MHz. Ensure this is suitable for your location.
+    Ensure a stable 3.3V power supply to the LoRa module for reliable operation.
+
+Developed by Vohala – Innovating the way we communicate.
